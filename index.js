@@ -214,7 +214,16 @@ client.on('group-participants-update', async (anu) => {
 				case 'donate':
 					client.sendMessage(from, donasi(), text)
 				break
+				case 'ajuda':
+					client.sendMessage(from, ajuda(), text)
+				break
 				case 'info':
+					client.sendMessage(from, info(), text)
+				break
+				case 'suporte':
+					client.sendMessage(from, suporte(), text)
+				break
+				case 'infobot':
 					me = client.user
 					uptime = process.uptime()
 					teks = `nome do bot : ${me.name}\n*numero do bot* : @${me.jid.split('@')[0]}\n*sigla dos comandos* : ${prefix}\nnumeros bloqueados : ${blocked.length}\no bot esta ativo desde : ${kyun(uptime)}\n`
@@ -393,6 +402,18 @@ case 'lofi':
 						reply('Escolha a foto para pegar os txt dela ${prefix} >-<')
 					}
 					break
+					case 'midia':
+					client.sendMessage(from, midia(), text)
+				break
+				case 'adm':
+					client.sendMessage(from, adm(), text)
+				break
+				case 'extra':
+					client.sendMessage(from, extra(), text)
+				break
+				case 'criador':
+					client.sendMessage(from, criador(), text)
+				break
 				case 'stiker': 
 				case 'sticker':
 				case 'fig':
@@ -637,8 +658,7 @@ case 'lofi':
             case 'admin':
             case 'owner':
             case 'creator':
-            case 'criador':
-            case 'bdg':
+                        case 'bdg':
                   client.sendMessage(from, {displayname: "amor♥️", vcard: vcard}, MessageType.contact, { quoted: mek})
        client.sendMessage(from, 'Este é o número do meu criador ^-^ raja não fdp ',MessageType.text, { quoted: mek} )
            break    
@@ -731,6 +751,9 @@ case 'lofi':
 					}
 					mentions(teks, groupAdmins, true)
 					break
+					case 'grupos':
+					client.sendMessage(from, grupos(), text)
+				break
 				case 'img':
 				case 'converter':
 					if (!isQuotedSticker) return reply('marca a fig inteligente')
